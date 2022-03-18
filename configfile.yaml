@@ -1,0 +1,75 @@
+#==================================== 
+# Sample configuration file for Colocalization analysis
+#==================================== 
+
+## output directory to put the Colocalization results
+OutDir : "/home/sourya/Colocalization/Asthma_29785011/DICE_eQTL_CD4N"
+
+##=============
+## parameters related to GWAS data
+##=============
+
+## GWAS summary statistics file
+## provide the complete summary statistics (no need to filter based on significance / p-value)
+GWASFile: "/home/sourya/GWAS_Immune_Studies/Asthma_29785011/UKBB.asthma-2.assoc"
+
+##===== parameters depicting the columns of GWAS summary statistics file
+##===== if a parameter does not have any value, leave it blank
+## column containing the chromosome (mandatory parameter)
+GWASchrCol : 2
+## column containing the SNP coordinate (mandatory parameter)
+GWASposCol : 3
+## column containing beta (effect size)
+GWASbetaCol : 
+## column containing odds ratio
+## applicable only if GWASbetaCol is empty
+## Note: user need to provide either the beta (effect size) or the odds ratio
+GWASORCol : 6
+## column containing standard error (if not provided, it will be computed from the beta or odds ratio statistic)
+## better to provide as input, if available
+GWASSECol : 7
+## column containing p-value (mandatory parameter)
+GWASpValCol : 9
+## column containing sample size
+## if a GWAS data does not have sample size information, leave this field blank
+GWASSampleSizeCol : 
+## column containing minor allele frequency (MAF)
+## Note: user needs to provide the allele frequency information either for GWAS or for eQTL (see the parameter eQTLAFCol below)
+GWASAFCol : 10
+
+##=============
+## parameters related to eQTL data
+##=============
+
+## eQTL file
+## Note: user needs to provide the list of significant eQTLs (subject to a specific p-value or FDR threshold)
+eQTLFile : "/home/sourya/DICE_eQTL/CD4N/CD4N_eQTLs_FDR_0.05_SHORT.bed"
+
+## parameters depicting the columns of eQTL file
+## if a parameter does not have any value, leave it blank
+## column containing the chromosome (mandatory parameter)
+eQTLchrCol : 1
+## column containing the SNP coordinate (mandatory parameter)
+eQTLposCol : 2
+## column containing the gene ID (mandatory parameter)
+eQTLgeneIDCol : 3
+## column containing the gene name
+eQTLgeneNameCol : 11
+## column containing the rsID or variant ID (mandatory parameter)
+eQTLrsIDCol : 4
+## column containing the distance between TSS and this variant
+## leave the field blank if not present
+eQTLTSSDistCol : 10
+## column containing the beta (effect size) (mandatory parameter)
+eQTLbetaCol : 7
+## column containing the standard error (if not provided, it will be computed from the beta or odds ratio statistic) 
+## better to provide as input, if available
+eQTLSECol : 
+## column containing the minor allele frequency (MAF) 
+## Note: user needs to provide the allele frequency information either for GWAS or for eQTL
+eQTLAFCol : 
+## column containing the p-value of eQTL (mandatory parameter)
+eQTLpValCol : 5
+## column containing the FDR of eQTL 
+eQTLFDRCol : 6
+
