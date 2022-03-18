@@ -11,6 +11,12 @@ Implements colocalization between the reference GWAS summary statistics and inpu
 
 Performs colocalization using the R package coloc (https://chr1swallace.github.io/coloc/index.html)
 
+We use the coloc.abf() routine from the coloc package to perform the colocalization.
+
+Prerequisites
+===============
+
+1. Install the following R libraries: coloc, data.table, stringr, snpStats, dplyr, yaml
 
 Running the script
 ==================
