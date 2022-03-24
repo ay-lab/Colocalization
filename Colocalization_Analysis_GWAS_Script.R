@@ -290,6 +290,12 @@ for (chridx in 1:length(GWASChrList)) {
 			break
 		}
 	}
+
+	## if bool_GWAS_Loci = FALSE, means there is no significant GWAS loci for the current chromosome
+	if (bool_GWAS_Loci == FALSE) {
+		next
+	}
+
 	cat(sprintf("\n ===>> number of rows in GWAS_Loci_DF (GWAS loci for the current chromosome) : %s ", nrow(GWAS_Loci_DF)))	
 
 	##========== process individual GWAS loci and corresponding eQTL files for colocalization
