@@ -3,7 +3,7 @@
 #==================================== 
 
 ## output directory to put the Colocalization results
-OutDir : "/home/sourya/Colocalization/Asthma_29785011/DICE_eQTL_CD4N"
+OutDir : "/home/sourya/Colocalization/Out_Sample_eQTL_GWAS"
 
 ##=============
 ## parameters related to GWAS data
@@ -11,7 +11,7 @@ OutDir : "/home/sourya/Colocalization/Asthma_29785011/DICE_eQTL_CD4N"
 
 ## GWAS summary statistics file
 ## provide the complete summary statistics (no need to filter based on significance / p-value)
-GWASFile: "/home/sourya/GWAS_Immune_Studies/Asthma_29785011/UKBB.asthma-2.assoc"
+GWASFile: "./Data/sample_GWAS.txt"
 
 ##===== parameters depicting the columns of GWAS summary statistics file
 ##===== if a parameter does not have any value, leave it blank
@@ -43,7 +43,7 @@ GWASAFCol : 10
 
 ## eQTL file
 ## Note: user needs to provide the list of significant eQTLs (subject to a specific p-value or FDR threshold)
-eQTLFile : "/home/sourya/DICE_eQTL/CD4N/CD4N_eQTLs_FDR_0.05_SHORT.bed"
+eQTLFile : "./Data/Sample_eQTL.txt"
 
 ## parameters depicting the columns of eQTL file
 ## if a parameter does not have any value, leave it blank
